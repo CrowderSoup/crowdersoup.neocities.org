@@ -19,6 +19,15 @@ Neo CMS is a lightweight, static content site starter built with NeoCities.org i
 5. Tweak styles in `style.css`.
 6. Upload the updated files to your NeoCities site.
 
+## Optional deploys with GitHub Actions
+
+Neo CMS can deploy to NeoCities automatically on pushes to `main`. The workflow
+only runs when the `NEOCITIES_API_KEY` secret is present.
+
+1. In GitHub, open your repo settings and add a repository secret named
+   `NEOCITIES_API_KEY` with your NeoCities API key.
+2. Push to `main` (directly or via a merged PR) to trigger a deploy.
+
 ## IndieWeb support
 
 Neo CMS ships with basic IndieWeb features using hosted services:

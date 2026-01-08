@@ -1,0 +1,33 @@
+name: Deploy to Neocities
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  deploy:
+    if: ${{ secrets.NEOCITIES_API_KEY != '' }}
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Package site
+        run: |
+          set -euo pipefail
+          rm -f site.zip
+          zip -r site.zip . \
+            -x ".git/*" \
+            -x ".github/*" \
+            -x "**/.DS_Store"
+
+      - name: Upload to Neocities
+        env:
+          NEOCITIES_API_KEY: ${{ secrets.NEOCITIES_API_KEY }}
+        run: |
+          set -euo pipefail
+          curl -fS \
+            -H "Authorization: Bearer ${NEOCITIES_API_KEY}" \
+            -F "file=@site.zip" \
+            https://neocities.org/api/upload
