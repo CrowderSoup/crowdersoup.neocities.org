@@ -1,0 +1,31 @@
+name: Release Zip
+
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - name: Check out repo
+        uses: actions/checkout@v4
+
+      - name: Create zip archive
+        run: |
+          set -euo pipefail
+          git archive --format=zip --output=neo-cms.zip HEAD
+
+      - name: Publish latest release
+        uses: ncipollo/release-action@v1
+        with:
+          tag: latest
+          name: Latest
+          artifacts: neo-cms.zip
+          allowUpdates: true
+          replacesArtifacts: true
+          omitBody: true
