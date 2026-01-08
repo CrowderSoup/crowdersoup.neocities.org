@@ -5,61 +5,47 @@ on:
     branches:
       - main
 
-permissions:
-  contents: read
-  deployments: write
-
 jobs:
   deploy:
+    if: ${{ secrets.NEOCITIES_API_KEY != '' }}
     runs-on: ubuntu-latest
-    env:
-      NEOCITIES_API_KEY: ${{ secrets.NEOCITIES_API_KEY }}
-      NEOCITIES_URL: https://crowdersoup.neocities.org
+    environment:
+      name: neocities
+      url: ${{ steps.site.outputs.url }}
     steps:
-      - name: Checkout
+      - name: Check out repo
         uses: actions/checkout@v4
 
-      - name: Create deployment
-        if: ${{ env.NEOCITIES_API_KEY != '' }}
+      - name: Read site URL
+        id: site
+        run: |
+          python - <<'PY'
+          import json
+          import os
+
+          url = ""
+          try:
+            with open("content/index.json", "r", encoding="utf-8") as handle:
+              data = json.load(handle)
+              url = data.get("site", {}).get("url", "")
+          except FileNotFoundError:
+            pass
+
+          with open(os.environ["GITHUB_OUTPUT"], "a", encoding="utf-8") as handle:
+            handle.write(f"url={url}\n")
+          PY
+
+      - name: Deploy to Neocities
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          NEOCITIES_API_KEY: ${{ secrets.NEOCITIES_API_KEY }}
         run: |
           set -euo pipefail
-          response=$(curl -fS \
-            -H "Accept: application/vnd.github+json" \
-            -H "Authorization: Bearer ${GITHUB_TOKEN}" \
-            https://api.github.com/repos/${GITHUB_REPOSITORY}/deployments \
-            -d "{\"ref\":\"${GITHUB_SHA}\",\"environment\":\"neocities\",\"auto_merge\":false,\"required_contexts\":[],\"description\":\"Deploy to Neocities\",\"environment_url\":\"${NEOCITIES_URL}\"}")
-          deployment_id=$(printf '%s' "$response" | python3 -c 'import json,sys; print(json.load(sys.stdin)["id"])')
-          echo "DEPLOYMENT_ID=${deployment_id}" >> "${GITHUB_ENV}"
+          api_url="https://neocities.org/api/upload"
 
-      - name: Package site
-        if: ${{ env.NEOCITIES_API_KEY != '' }}
-        run: |
-          set -euo pipefail
-          rm -f site.zip
-          zip -r site.zip . \
-            -x ".git/*" \
-            -x ".github/*" \
-            -x "**/.DS_Store"
-
-      - name: Upload to Neocities
-        if: ${{ env.NEOCITIES_API_KEY != '' }}
-        run: |
-          set -euo pipefail
-          curl -fS \
-            -H "Authorization: Bearer ${NEOCITIES_API_KEY}" \
-            -F "file=@site.zip" \
-            https://neocities.org/api/upload
-
-      - name: Mark deployment successful
-        if: ${{ env.NEOCITIES_API_KEY != '' && env.DEPLOYMENT_ID != '' }}
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        run: |
-          set -euo pipefail
-          curl -fS \
-            -H "Accept: application/vnd.github+json" \
-            -H "Authorization: Bearer ${GITHUB_TOKEN}" \
-            https://api.github.com/repos/${GITHUB_REPOSITORY}/deployments/${DEPLOYMENT_ID}/statuses \
-            -d "{\"state\":\"success\",\"environment_url\":\"${NEOCITIES_URL}\",\"description\":\"Deployed to Neocities\"}"
+          git ls-files -co --exclude-standard -z | while IFS= read -r -d '' file; do
+            echo "Uploading ${file}"
+            curl --fail --silent --show-error \
+              -H "Authorization: Bearer ${NEOCITIES_API_KEY}" \
+              -F "file=@${file};filename=${file}" \
+              "${api_url}" >/dev/null
+          done
