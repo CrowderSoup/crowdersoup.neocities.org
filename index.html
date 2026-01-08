@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Neo CMS</title>
+    <meta
+      name="description"
+      content="A tiny flat-file CMS that reads markdown from /content."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;600&family=IBM+Plex+Sans:wght@300;400;600&family=Fraunces:opsz,wght@9..144,600;9..144,700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="icon" type="image/svg+xml" href="./favicon.svg" />
+    <link href="./style.css" rel="stylesheet" />
+  </head>
+  <body>
+    <main class="grid">
+      <aside class="brand">
+        <div class="brand-card">
+          <div class="pill">flat-file cms</div>
+          <h1 class="logo" id="site-title">Neo CMS</h1>
+          <p class="tagline" id="site-tagline">
+            A dumb-simple markdown site. Put files in <code>/content</code> and
+            link them in <code>content/index.json</code>.
+          </p>
+        </div>
+        <nav id="nav"></nav>
+      </aside>
+
+      <section class="main">
+        <div class="hero">
+          <div>
+            <h1 id="page-title">Loading…</h1>
+            <p id="page-subtitle">Fetching content from your flat files.</p>
+          </div>
+          <div class="status" id="page-status">Ready</div>
+        </div>
+
+        <article class="content" id="content">
+          <div class="loading" aria-live="polite">
+            <span></span><span></span><span></span>
+            <span>Loading content</span>
+          </div>
+        </article>
+
+        <footer id="site-footer"></footer>
+      </section>
+    </main>
+
+    <script type="text/javascript" src="./neo-cms.js"></script>
+  </body>
+</html>
