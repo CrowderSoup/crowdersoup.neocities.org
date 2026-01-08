@@ -49,6 +49,6 @@ jobs:
             echo "Uploading ${file}"
             curl --fail --silent --show-error \
               -H "Authorization: Bearer ${NEOCITIES_API_KEY}" \
-              -F "file=@${file};filename=${file}" \
+              -F "file[]=@${file};filename=${file}" \
               "${api_url}" >/dev/null
           done
