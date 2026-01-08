@@ -1,81 +1,61 @@
 # neo-cms
 
-Neo CMS is a lightweight, static content site starter built with NeoCities in mind. It ships as a single-page site with a tiny JS layer and a simple `content/` folder you can edit without build tools.
+Neo-CMS is a tiny, flat-file CMS for personal sites on Neocities. It keeps content in `content/`, renders it into static HTML in the browser, and stays intentionally small and understandable.
 
 ![Neo CMS screenshot](screenshot.png)
 
-## What is this?
+## Purpose
 
-- A minimal, file-based CMS for small personal sites on NeoCities.
-- Works with plain HTML, CSS, and JavaScript.
-- Designed to be edited locally and uploaded to your NeoCities site.
+Neo-CMS exists to make a simple, learnable workflow for hobbyists and tinkerers who want to edit a few pages and publish them to Neocities without build tools, databases, or plugins.
 
-## Quick start (NeoCities)
+## What it is
 
-1. Create a NeoCities site if you do not have one yet.
-2. Open `index.html` in a browser to preview locally.
-3. Edit markdown files in `content/` to update pages.
-4. Customize behavior and data loading in `neo-cms.js`.
-5. Tweak styles in `style.css`.
-6. Upload the updated files to your NeoCities site.
+- A super simple CMS for Neocities
+- Flat files in `content/` as the source of truth for pages
+- Static HTML rendered from that content (no build step)
+- Minimal IndieWeb support (microformats + basic semantics)
+- Friendly for learners, hobbyists, and small personal sites
 
-## Optional deploys with GitHub Actions
+## What it is not
 
-Neo CMS can deploy to NeoCities automatically on pushes to `main`. The workflow
-only runs when the `NEOCITIES_API_KEY` secret is present and records a GitHub
-deployment for the site URL.
+- Not a full-featured CMS
+- Not WordPress, Ghost, or a site builder
+- Not designed for multi-user workflows, plugins, or complex content models
+- Not a general-purpose framework
 
-1. In GitHub, open your repo settings and add a repository secret named
-   `NEOCITIES_API_KEY` with your NeoCities API key.
-2. Push to `main` (directly or via a merged PR) to trigger a deploy.
+## Supported usage paths
 
-## IndieWeb support
+### A. Download a release artifact
 
-Neo CMS ships with basic IndieWeb features using hosted services:
+Best if you just want to publish a site quickly and keep everything manual.
 
-- IndieAuth identity links (`rel="me"`) so you can log into other sites.
-- Webmentions for inbound comments/reactions (via `webmention.io`).
+1. Download `neo-cms.zip` from the latest GitHub release.
+2. Unzip it locally.
+3. Edit files in `content/` and `style.css`.
+4. Upload the folder to Neocities.
 
-### IndieAuth identity
+### B. Fork the repo
 
-IndieAuth relies on `rel="me"` links in your HTML so other sites can verify your
-identity. Add your profile links directly in `index.html` under the `rel="me"`
-section. Neo CMS does not include a local login UI.
+Best for people who want version control or automatic deploys. If you are a Neocities Supporter, you can use GitHub Actions to auto-deploy.
 
-### Setup steps
+1. Fork this repo on GitHub.
+2. Edit content in your fork.
+3. Add a repository secret named `NEOCITIES_API_KEY` with your Neocities API key.
+4. Push to `main` to deploy via GitHub Actions.
 
-1. Set your canonical site URL in `content/index.json`:
+## IndieWeb support (minimal)
 
-```
-"url": "https://example.com"
-```
+Neo-CMS includes basic IndieWeb affordances:
 
-2. Add `rel="me"` links to `index.html` so IndieAuth can verify your identity.
-3. Register your site at `https://webmention.io/` and copy your endpoint.
-4. Update both `content/index.json` and `index.html` with the webmention
-   endpoints:
+- IndieAuth `rel="me"` links
+- Webmentions via `webmention.io`
 
-```
-"webmentionEndpoint": "https://webmention.io/example.com/webmention"
-```
+Setup lives in `content/index.json` under `site.indieweb`, plus a few tags in `index.html`.
 
-```
-<link rel="webmention" href="https://webmention.io/example.com/webmention" />
-<link rel="pingback" href="https://webmention.io/example.com/xmlrpc" />
-```
+## Contributing
 
-Neo CMS reads IndieWeb settings from `content/index.json` under
-`site.indieweb`.
-
-### Required environment variables
-
-None. Neo CMS is a static site, so configuration lives in `index.html` and
-`content/index.json`.
-
-## Project links
-
-- Live site: <https://neo-cms.neocities.org/>
+Keep changes small, clear, and aligned with the project goals. See `CONTRIBUTING.md` for scope and expectations.
 
 ## License
 
-MIT. See [`LICENSE`](LICENSE)
+MIT. See `LICENSE`.

@@ -1,8 +1,8 @@
 {
   "site": {
-    "title": "Neo CMS",
-    "tagline": "A dumb-simple markdown site. Drop files in /content and list them here.",
-    "footer": "Built for NeoCities. Edit content/index.json to change the menu.",
+    "title": "Neo-CMS",
+    "tagline": "A tiny flat-file CMS for Neocities. Drop files in /content and list them here.",
+    "footer": "Built for Neocities. Edit content/index.json to change the menu.",
     "url": "https://neo-cms.neocities.org/",
     "indieweb": {
       "webmentionEndpoint": "https://webmention.io/neo-cms.neocities.org/webmention"
@@ -16,7 +16,7 @@
           "title": "Home",
           "file": "home.md",
           "slug": "home",
-          "description": "A lightweight flat-file CMS powered by markdown."
+          "description": "A tiny flat-file CMS for Neocities."
         },
         {
           "title": "How It Works",

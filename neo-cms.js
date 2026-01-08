@@ -413,7 +413,7 @@ const loadManifest = async () => {
     if (!response.ok) throw new Error("Missing manifest");
     manifest = await response.json();
 
-    siteTitle.textContent = manifest.site?.title || "Neo CMS";
+    siteTitle.textContent = manifest.site?.title || "Neo-CMS";
     siteTagline.textContent = manifest.site?.tagline || siteTagline.textContent;
     siteFooter.textContent = manifest.site?.footer || "";
     indieweb.webmentionEndpoint =
