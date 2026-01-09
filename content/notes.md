@@ -1,9 +1,7 @@
 # Notes
 
-Small scraps of content. Replace this with your own notes.
+Short updates, links, and small observations live here. This page is a sample format you can reuse.
 
-- Write short updates.
-- Keep a list of links.
-- Paste a quote you like.
-
-> "Nothing fancy. Just files." - you, probably
+- Site refresh: pulled in 90s vibes and brighter colors.
+- Reminder to keep things simple and ship often.
+- Always on the lookout for fun, handmade web pages.

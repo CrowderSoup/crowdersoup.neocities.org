@@ -1,45 +1,57 @@
 {
   "site": {
-    "title": "Neo-CMS",
-    "tagline": "A tiny flat-file CMS for Neocities. Drop files in /content and list them here.",
-    "footer": "Built for Neocities. Edit content/index.json to change the menu.",
-    "url": "https://neo-cms.neocities.org/",
+    "title": "CrowderSoup",
+    "tagline": "Father of two, Software developer, and lover of the open web.",
+    "footer": "Made with love using Neo-CMS",
+    "url": "https://crowdersoup.neocities.org/",
     "indieweb": {
-      "webmentionEndpoint": "https://webmention.io/neo-cms.neocities.org/webmention"
+      "webmentionEndpoint": "https://webmention.io/crowdersoup.neocities.org/webmention"
     }
   },
   "sections": [
     {
-      "title": "Start",
+      "title": "Welcome",
       "items": [
         {
           "title": "Home",
           "file": "home.md",
           "slug": "home",
-          "description": "A tiny flat-file CMS for Neocities."
+          "description": "A small example site built with Neo-CMS."
         },
         {
-          "title": "How It Works",
-          "file": "how-it-works.md",
-          "slug": "how-it-works",
-          "description": "Put files in /content. Add them here. Done."
+          "title": "About",
+          "file": "about.md",
+          "slug": "about",
+          "description": "A sample bio page you can remix."
+        },
+        {
+          "title": "Now",
+          "file": "now.md",
+          "slug": "now",
+          "description": "A simple status update format."
         }
       ]
     },
     {
-      "title": "Collection",
+      "title": "Explore",
       "items": [
+        {
+          "title": "Projects",
+          "file": "projects.md",
+          "slug": "projects",
+          "description": "A demo list of projects and ideas."
+        },
         {
           "title": "Notes",
           "file": "notes.md",
           "slug": "notes",
-          "description": "Loose thoughts, quick updates, and drafts."
+          "description": "Short updates and a reusable template."
         },
         {
-          "title": "Changelog",
-          "file": "changelog.md",
-          "slug": "changelog",
-          "description": "Tiny release log."
+          "title": "Links",
+          "file": "links.md",
+          "slug": "links",
+          "description": "Example links to swap with your own."
         }
       ]
     }
