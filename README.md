@@ -1,3 +1,5 @@
+> This is a **fork**. This repo is here to show what you can do with [Neo-CMS](https://neo-cms.neocities.org).
+
 # neo-cms
 
 Neo-CMS is a tiny, flat-file CMS for personal sites on Neocities. It keeps content in `content/`, renders it into static HTML in the browser, and stays intentionally small and understandable.
