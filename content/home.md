@@ -9,3 +9,7 @@ Hey, I'm CrowderSoup -- a software developer, dad of two, and lover of the open 
 - Links you can swap for your own.
 
 If you're into the retro web, pull up a chair and explore -- then make it yours.
+
+## Gardn
+
+Check me out [on Gardn](https://gardn.website/u/neo-crowdersoup-com/)
