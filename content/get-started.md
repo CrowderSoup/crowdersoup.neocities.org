@@ -5,7 +5,7 @@ You can treat Gardn as progressive enhancement for your existing site.
 ## Quick setup
 
 1. Log in at gardn.website using your own website URL.
-2. Publish your first entry.
+2. Pick your first plant and harvest some URLs.
 3. Copy the embed snippets from your dashboard.
 4. Add them where you want in your layout.
 5. Update your CSP: use `frame-src https://gardn.website` for iframe embeds, or `connect-src https://gardn.website` for the JavaScript loader.

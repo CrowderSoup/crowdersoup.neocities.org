@@ -3,14 +3,14 @@
 Gardn keeps the workflow simple:
 
 1. Log in at gardn.website with your own website URL.
-2. Publish your first entry.
+2. Pick your first plant and harvest some URLs.
 3. Grab the embed snippets from your dashboard.
 4. Place those embeds into your own website.
 5. Keep your design, navigation, and voice fully custom.
 
 ## The model
 
-Gardn handles the stream logic and presentation. Your site handles branding, context, and long-form pages. You get the best of both worlds: fast publishing plus total aesthetic control.
+Gardn handles the stream logic and presentation. Your site handles branding, context, and long-form pages. You get the best of both worlds: a tended garden plus total aesthetic control.
 
 ## Two ways to embed
 

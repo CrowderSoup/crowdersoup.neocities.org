@@ -1,6 +1,6 @@
 # Gardn for the handmade web
 
-Gardn is a publishing layer for people who want a living site, not a feed prison. It gives your personal website a planted timeline: posts, harvests, and blog-roll moments that stay yours.
+Gardn is a tending layer for people who want a living site, not a feed prison. It gives your personal website a planted timeline: plants, harvests, and blog-roll moments that stay yours.
 
 ## Why people pick Gardn
 
