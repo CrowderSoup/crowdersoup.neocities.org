@@ -1,57 +1,57 @@
 {
   "site": {
-    "title": "CrowderSoup",
-    "tagline": "Father of two, Software developer, and lover of the open web.",
-    "footer": "Made with love using Neo-CMS",
-    "url": "https://crowdersoup.neocities.org/",
+    "title": "Gardn",
+    "tagline": "Cozy cyberpunk publishing for your IndieWeb garden.",
+    "footer": "Build your plot at gardn.website",
+    "url": "https://gardn.crowdersoup.com/",
     "indieweb": {
-      "webmentionEndpoint": "https://webmention.io/crowdersoup.neocities.org/webmention"
+      "webmentionEndpoint": "https://webmention.io/crowdersoup.com/webmention"
     }
   },
   "sections": [
     {
-      "title": "Welcome",
+      "title": "Start Here",
       "items": [
         {
           "title": "Home",
           "file": "home.md",
           "slug": "home",
-          "description": "A small example site built with Neo-CMS."
+          "description": "What Gardn is and why people use it."
         },
         {
-          "title": "About",
-          "file": "about.md",
-          "slug": "about",
-          "description": "A sample bio page you can remix."
+          "title": "How It Works",
+          "file": "how-it-works.md",
+          "slug": "how-it-works",
+          "description": "The Gardn publishing flow in plain language."
+        },
+        {
+          "title": "Get Started",
+          "file": "get-started.md",
+          "slug": "get-started",
+          "description": "Ship your first Gardn-powered page quickly."
+        }
+      ]
+    },
+    {
+      "title": "Reality Check",
+      "items": [
+        {
+          "title": "Limitations",
+          "file": "limitations.md",
+          "slug": "limitations",
+          "description": "Where Gardn embeds work and where they currently do not."
         },
         {
           "title": "Now",
           "file": "now.md",
           "slug": "now",
-          "description": "A simple status update format."
-        }
-      ]
-    },
-    {
-      "title": "Explore",
-      "items": [
-        {
-          "title": "Projects",
-          "file": "projects.md",
-          "slug": "projects",
-          "description": "A demo list of projects and ideas."
-        },
-        {
-          "title": "Notes",
-          "file": "notes.md",
-          "slug": "notes",
-          "description": "Short updates and a reusable template."
+          "description": "Current direction for Gardn."
         },
         {
           "title": "Links",
           "file": "links.md",
           "slug": "links",
-          "description": "Example links to swap with your own."
+          "description": "Try Gardn, read docs, and follow updates."
         }
       ]
     }

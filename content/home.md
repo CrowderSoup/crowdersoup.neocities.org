@@ -1,15 +1,20 @@
-# Welcome
+# Gardn for the handmade web
 
-Hey, I'm CrowderSoup -- a software developer, dad of two, and lover of the open web. This site is a small example of what you can build with Neo-CMS: lightweight, hand-made, and easy to remix.
+Gardn is a publishing layer for people who want a living site, not a feed prison. It gives your personal website a planted timeline: posts, harvests, and blog-roll moments that stay yours.
 
-## On this site
+## Why people pick Gardn
 
-- Example pages that show how Neo-CMS can be organized.
-- A few placeholder sections you can personalize.
-- Links you can swap for your own.
+- **IndieWeb-first:** your domain, your files, your style.
+- **Embeddable by design:** drop in Gardn blocks and keep your existing layout.
+- **Human tempo:** cultivate updates over time instead of chasing algorithm spikes.
+- **Actually cozy:** minimal setup, no heavy framework lock-in.
 
-If you're into the retro web, pull up a chair and explore -- then make it yours.
+## What you are seeing on this page
 
-## Gardn
+Below the article area you have live Gardn embeds for:
 
-Check me out [on Gardn](https://gardn.website/u/neo-crowdersoup-com/)
+- My Plant
+- Blog Roll
+- Harvest List
+
+This page is both a demo and a blueprint for your own cyberpunk-cottage corner of the web.
